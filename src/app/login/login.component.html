@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+        <div *ngIf="loginForm.controls.email.errors.required">Email is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+      <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+        <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <div *ngIf="inValid" class="error">
+      Invalid Credentials
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<h1>List Users</h1>
+<p><button class="btn btn-info" (click)="addUser()">Add User</button></p>
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+    <td>
+      <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+      <button type="button" class="btn btn-primary" (click)="editUser(user)">Edit</button>
+    </td>
+  </tr>
+</table>
